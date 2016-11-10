@@ -77,17 +77,6 @@ module.exports = function makeRouterWithSockets (io) {
                   client.query('SELECT id FROM users WHERE name = $1', [name], function(err, result) {
                       if (err) return next(err);
                       insertIntoTable(result.rows[0].id, content);
-                    //   userName = result.rows[0].id;
-                    //   client.query('INSERT INTO tweets (userid, content) VALUES ($1, $2)', [userName, content], function(err, result) {
-                    //       if (err) return next(err);
-                    //       let newTweet = {
-                    //            name: name,
-                    //            content: content,
-                    //            id: userName
-                    //        };
-                    //     io.sockets.emit('new_tweet', newTweet);
-                    //     res.redirect('/');
-                    //   });
                   });
               });
 
